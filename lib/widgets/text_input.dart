@@ -31,12 +31,13 @@ class ColorInput extends StatelessWidget {
           ),
           TextField(
             decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5),
-              ),
+              // border: OutlineInputBorder(
+              //   // borderRadius: BorderRadius.circular(5),
+              // ),
               hintText: hintText,
             ),
             controller: controller,
+            maxLines: 1,
           ),
         ],
       ),

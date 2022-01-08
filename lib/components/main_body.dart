@@ -13,7 +13,13 @@ class MainBody extends StatelessWidget {
     return Container(
       height: 600,
       width: double.infinity,
-      color: Colors.green,
+      // color: Colors.green,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage(
+                "assets/images/fakurian-design-E8Ufcyxz514-unsplash.jpg"),
+            fit: BoxFit.cover),
+      ),
       child: Center(
         child: ClipRRect(
           child: BackdropFilter(
