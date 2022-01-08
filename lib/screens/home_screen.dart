@@ -17,18 +17,14 @@ class HomePage extends StatelessWidget {
             style: GoogleFonts.dancingScript(
               fontWeight: FontWeight.bold,
               color: Colors.black,
-              fontSize: 40,
+              fontSize: 30,
             ),
           ),
         ),
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
-      body: Column(
-        children: const [
-          MainBody(),
-        ],
-      ),
+      body: const MainBody(),
     );
   }
 }

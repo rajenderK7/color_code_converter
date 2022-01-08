@@ -12,13 +12,12 @@ class MainBody extends StatelessWidget {
     Size _size = MediaQuery.of(context).size;
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < 768) {
+        if (constraints.maxWidth < 852) {
           return const MobileView();
         } else {
           return Container(
-            height: 600,
+            height: 800,
             width: double.infinity,
-            // color: Colors.green,
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
@@ -59,24 +58,22 @@ class MainBody extends StatelessWidget {
                           end: Alignment.bottomRight,
                         ),
                       ),
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Row(
-                                  children: const [
-                                    ColorQuote(),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    ConverterUI(),
-                                  ],
-                                )
-                              ],
-                            ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                children: const [
+                                  ColorQuote(),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  ConverterUI(),
+                                ],
+                              )
+                            ],
                           ),
                         ),
                       ),

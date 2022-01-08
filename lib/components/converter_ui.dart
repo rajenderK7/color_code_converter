@@ -27,7 +27,7 @@ class _ConverterUIState extends State<ConverterUI> {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: _size.width * 0.5,
-        height: _size.height * 0.6,
+        height: _size.height * 0.7,
         color: Colors.transparent,
         child: Center(
           child: Column(
@@ -50,58 +50,118 @@ class _ConverterUIState extends State<ConverterUI> {
               const SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      foregroundColor: MaterialStateProperty.all(Colors.black),
+              _size.width > 852
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.black),
+                          ),
+                          onPressed: () {
+                            if (_rgbController.value.text.isEmpty &&
+                                _cmykController.value.text.isEmpty) {
+                              convertInputHEX();
+                            }
+                            if (_hexController.value.text.isEmpty &&
+                                _cmykController.value.text.isEmpty) {
+                              convertInputRGB();
+                            }
+                            if (_rgbController.value.text.isEmpty &&
+                                _hexController.value.text.isEmpty) {
+                              convertInputCMYK();
+                            } else {
+                              convertInputRGB();
+                            }
+                            updateColorPreview();
+                          },
+                          child: Text(
+                            "Convert",
+                            style: GoogleFonts.lato(),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.black),
+                          ),
+                          onPressed: () {
+                            _rgbController.value = TextEditingValue.empty;
+                            _hexController.value = TextEditingValue.empty;
+                            _cmykController.value = TextEditingValue.empty;
+                            colval = 0;
+                          },
+                          child: Text(
+                            "Clear",
+                            style: GoogleFonts.lato(),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.black),
+                          ),
+                          onPressed: () {
+                            if (_rgbController.value.text.isEmpty &&
+                                _cmykController.value.text.isEmpty) {
+                              convertInputHEX();
+                            }
+                            if (_hexController.value.text.isEmpty &&
+                                _cmykController.value.text.isEmpty) {
+                              convertInputRGB();
+                            }
+                            if (_rgbController.value.text.isEmpty &&
+                                _hexController.value.text.isEmpty) {
+                              convertInputCMYK();
+                            } else {
+                              convertInputRGB();
+                            }
+                            updateColorPreview();
+                          },
+                          child: Text(
+                            "Convert",
+                            style: GoogleFonts.lato(),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.black),
+                          ),
+                          onPressed: () {
+                            _rgbController.value = TextEditingValue.empty;
+                            _hexController.value = TextEditingValue.empty;
+                            _cmykController.value = TextEditingValue.empty;
+                            colval = 0;
+                          },
+                          child: Text(
+                            "Clear",
+                            style: GoogleFonts.lato(),
+                          ),
+                        ),
+                      ],
                     ),
-                    onPressed: () {
-                      if (_rgbController.value.text.isEmpty &&
-                          _cmykController.value.text.isEmpty) {
-                        convertInputHEX();
-                      }
-                      if (_hexController.value.text.isEmpty &&
-                          _cmykController.value.text.isEmpty) {
-                        convertInputRGB();
-                      }
-                      if (_rgbController.value.text.isEmpty &&
-                          _hexController.value.text.isEmpty) {
-                        convertInputCMYK();
-                      } else {
-                        convertInputRGB();
-                      }
-                      updateColorPreview();
-                    },
-                    child: Text(
-                      "Convert",
-                      style: GoogleFonts.lato(),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 30,
-                  ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      foregroundColor: MaterialStateProperty.all(Colors.black),
-                    ),
-                    onPressed: () {
-                      _rgbController.value = TextEditingValue.empty;
-                      _hexController.value = TextEditingValue.empty;
-                      _cmykController.value = TextEditingValue.empty;
-                    },
-                    child: Text(
-                      "Clear",
-                      style: GoogleFonts.lato(),
-                    ),
-                  ),
-                ],
-              ),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
               ColorPreview(
                 colorValue: colval,
