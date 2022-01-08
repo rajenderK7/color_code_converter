@@ -14,9 +14,10 @@ class ColorQuoteMobile extends StatelessWidget {
             TextSpan(
               text: "Colors ",
               style: GoogleFonts.comfortaa(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
             ),
             TextSpan(
               text: "Make All\n",

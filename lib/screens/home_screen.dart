@@ -12,7 +12,6 @@ class HomePage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
-        foregroundColor: Colors.transparent,
         title: Padding(
           padding: const EdgeInsets.only(top: 10.0),
           child: Text(

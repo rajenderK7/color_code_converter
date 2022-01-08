@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Color Code Converter',
+      title: 'Color Code++',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           // This is the theme of your application.
