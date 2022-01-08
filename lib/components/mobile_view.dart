@@ -9,58 +9,60 @@ class MobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
-    return Container(
-      width: double.infinity,
-      height: _size.height,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-              "assets/images/fakurian-design-E8Ufcyxz514-unsplash.jpg"),
-          fit: BoxFit.fitHeight,
-        ),
-      ),
-      child: Center(
-        child: Container(
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 30,
-                spreadRadius: 20,
-                color: Colors.black.withOpacity(0.1),
-              ),
-            ],
+    return SingleChildScrollView(
+      child: Container(
+        width: double.infinity,
+        height: _size.height,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                "assets/images/fakurian-design-E8Ufcyxz514-unsplash.jpg"),
+            fit: BoxFit.fitHeight,
           ),
-          child: ClipRRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 6,
-                sigmaY: 6,
-              ),
-              child: Container(
-                width: _size.width * 0.65,
-                height: _size.height * 0.8,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: Colors.black.withOpacity(0.2),
+        ),
+        child: Center(
+          child: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 30,
+                  spreadRadius: 20,
+                  color: Colors.black.withOpacity(0.1),
+                ),
+              ],
+            ),
+            child: ClipRRect(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: 6,
+                  sigmaY: 6,
+                ),
+                child: Container(
+                  width: _size.width * 0.8,
+                  height: _size.height * 0.8,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: Colors.black.withOpacity(0.2),
+                    ),
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.white.withOpacity(0.3),
+                        Colors.white.withOpacity(0.08)
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
                   ),
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.white.withOpacity(0.3),
-                      Colors.white.withOpacity(0.08)
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: const [
+                      ColorQuoteMobile(),
+                      ConverterUI(),
                     ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
                   ),
+                  // child: const ConverterUI(),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    ColorQuoteMobile(),
-                    ConverterUI(),
-                  ],
-                ),
-                // child: const ConverterUI(),
               ),
             ),
           ),

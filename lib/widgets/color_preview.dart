@@ -22,7 +22,7 @@ class ColorPreview extends StatelessWidget {
         Container(
           width: 200,
           height: 50,
-          color: colorValue == 0 ? Colors.transparent : Color(colorValue),
+          color: colorValue == -1 ? Colors.transparent : Color(colorValue),
         ),
       ],
     );

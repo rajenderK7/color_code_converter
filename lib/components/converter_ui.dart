@@ -18,7 +18,7 @@ class _ConverterUIState extends State<ConverterUI> {
 
   final _cmykController = TextEditingController();
 
-  int colval = 0;
+  int colval = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +57,9 @@ class _ConverterUIState extends State<ConverterUI> {
                         ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                            foregroundColor:
                                 MaterialStateProperty.all(Colors.black),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
                           ),
                           onPressed: () {
                             if (_rgbController.value.text.isEmpty &&
@@ -89,15 +89,15 @@ class _ConverterUIState extends State<ConverterUI> {
                         ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                            foregroundColor:
                                 MaterialStateProperty.all(Colors.black),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
                           ),
                           onPressed: () {
                             _rgbController.value = TextEditingValue.empty;
                             _hexController.value = TextEditingValue.empty;
                             _cmykController.value = TextEditingValue.empty;
-                            colval = 0;
+                            updateColorPreview();
                           },
                           child: Text(
                             "Clear",
@@ -111,9 +111,9 @@ class _ConverterUIState extends State<ConverterUI> {
                         ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                            foregroundColor:
                                 MaterialStateProperty.all(Colors.black),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
                           ),
                           onPressed: () {
                             if (_rgbController.value.text.isEmpty &&
@@ -143,15 +143,16 @@ class _ConverterUIState extends State<ConverterUI> {
                         ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                            foregroundColor:
                                 MaterialStateProperty.all(Colors.black),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
                           ),
                           onPressed: () {
                             _rgbController.value = TextEditingValue.empty;
                             _hexController.value = TextEditingValue.empty;
                             _cmykController.value = TextEditingValue.empty;
-                            colval = 0;
+
+                            updateColorPreview();
                           },
                           child: Text(
                             "Clear",
@@ -226,14 +227,16 @@ class _ConverterUIState extends State<ConverterUI> {
 
   void updateColorPreview() {
     String currentColor = _hexController.value.text;
+    if (currentColor == "") {
+      setState(() {
+        colval = -1;
+      });
+      return;
+    }
     currentColor = currentColor.replaceAll("#", "ff");
     int currentColVal = int.parse(currentColor, radix: 16);
     setState(() {
-      if (currentColor.isEmpty) {
-        colval = 0;
-      } else {
-        colval = currentColVal;
-      }
+      colval = currentColVal;
     });
   }
 }
