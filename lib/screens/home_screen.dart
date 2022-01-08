@@ -14,10 +14,10 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.all(5.0),
           child: Text(
             "Rajender",
-            style: GoogleFonts.lato(
+            style: GoogleFonts.dancingScript(
               fontWeight: FontWeight.bold,
               color: Colors.black,
-              fontSize: 30,
+              fontSize: 40,
             ),
           ),
         ),

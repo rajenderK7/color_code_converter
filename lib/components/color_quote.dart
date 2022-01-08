@@ -36,32 +36,6 @@ class ColorQuote extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        // RichText(
-        //   text: TextSpan(
-        //     children: [
-        //       // TextSpan(
-        //       //   text: "Colors\n",
-        //       //   style: GoogleFonts.comfortaa(
-        //       //     fontSize: 50,
-        //       //     fontWeight: FontWeight.bold,
-        //       //   ),
-        //       // ),
-        //       // TextSpan(
-        //       //   text: "Make\nAll the\n",
-        //       //   style: GoogleFonts.poppins(
-        //       //     fontSize: 30,
-        //       //   ),
-        //       // ),
-        //       // TextSpan(
-        //       //   text: "Difference.\n",
-        //       //   style: GoogleFonts.dancingScript(
-        //       //     fontSize: 50,
-        //       //     fontWeight: FontWeight.bold,
-        //       //   ),
-        //       // ),
-        //     ],
-        //   ),
-        // )
       ],
     );
   }

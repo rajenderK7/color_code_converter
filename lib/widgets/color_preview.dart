@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 class ColorPreview extends StatelessWidget {
   final int colorValue;
   const ColorPreview({Key? key, required this.colorValue}) : super(key: key);
-  // final col = Color.fromRGBO(255, 120, 175, 1);
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +11,18 @@ class ColorPreview extends StatelessWidget {
       children: [
         Text(
           "Color Preview",
-          style: GoogleFonts.roboto(
+          style: GoogleFonts.lato(
             fontWeight: FontWeight.w500,
-            fontSize: 15,
+            fontSize: 20,
           ),
         ),
+        const SizedBox(
+          height: 10,
+        ),
         Container(
-          width: 100,
+          width: 200,
           height: 50,
-          color: Color(colorValue),
+          color: colorValue == 0 ? Colors.transparent : Color(colorValue),
         ),
       ],
     );

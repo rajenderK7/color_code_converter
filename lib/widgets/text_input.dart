@@ -23,17 +23,22 @@ class ColorInput extends StatelessWidget {
             padding: const EdgeInsets.only(left: 1.0),
             child: Text(
               labelText,
-              style: GoogleFonts.roboto(
-                fontWeight: FontWeight.w500,
+              style: GoogleFonts.lato(
+                fontWeight: FontWeight.w600,
                 fontSize: 15,
               ),
             ),
           ),
           TextField(
+            keyboardType: TextInputType.number,
+            style: const TextStyle(
+              color: Colors.black,
+            ),
             decoration: InputDecoration(
-              // border: OutlineInputBorder(
-              //   // borderRadius: BorderRadius.circular(5),
-              // ),
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
               hintText: hintText,
             ),
             controller: controller,
