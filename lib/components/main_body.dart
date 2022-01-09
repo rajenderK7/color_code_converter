@@ -49,7 +49,7 @@ class MainBody extends StatelessWidget {
                     "Color Code++",
                     style: GoogleFonts.josefinSans(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Colors.green,
                       fontSize: 30,
                       letterSpacing: 1.5,
                     ),
