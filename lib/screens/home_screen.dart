@@ -10,23 +10,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 10.0),
-          child: Text(
-            "Color Code++",
-            style: GoogleFonts.josefinSans(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontSize: 30,
-              letterSpacing: 1.5,
-            ),
-          ),
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   title: Padding(
+      //     padding: const EdgeInsets.only(top: 10.0),
+      //     child: Text(
+      //       "Color Code++",
+      //       style: GoogleFonts.josefinSans(
+      //         fontWeight: FontWeight.bold,
+      //         color: Colors.white,
+      //         fontSize: 30,
+      //         letterSpacing: 1.5,
+      //       ),
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0.0,
+      // ),
       body: const MainBody(),
       bottomNavigationBar: const DesignedBy(),
     );

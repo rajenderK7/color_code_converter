@@ -9,11 +9,13 @@ class ColorPreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "Color Preview",
-          style: GoogleFonts.lato(
-            fontWeight: FontWeight.w500,
-            fontSize: 20,
+        Center(
+          child: Text(
+            "Color Preview",
+            style: GoogleFonts.lato(
+              fontWeight: FontWeight.w500,
+              fontSize: 20,
+            ),
           ),
         ),
         const SizedBox(
@@ -23,6 +25,9 @@ class ColorPreview extends StatelessWidget {
           width: 200,
           height: 50,
           color: colorValue == -1 ? Colors.transparent : Color(colorValue),
+          // child: colorValue == -1
+          //     ? const Center(child: Text("No preview available yet."))
+          //     : null,
         ),
       ],
     );
