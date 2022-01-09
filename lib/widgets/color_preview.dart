@@ -25,9 +25,6 @@ class ColorPreview extends StatelessWidget {
           width: 200,
           height: 50,
           color: colorValue == -1 ? Colors.transparent : Color(colorValue),
-          // child: colorValue == -1
-          //     ? const Center(child: Text("No preview available yet."))
-          //     : null,
         ),
       ],
     );

@@ -48,7 +48,7 @@ class _ConverterUIState extends State<ConverterUI> {
                 controller: _cmykController,
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
               _size.width > 852
                   ? Row(
