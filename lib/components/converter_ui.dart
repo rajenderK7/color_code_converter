@@ -238,11 +238,6 @@ class _ConverterUIState extends State<ConverterUI> {
     setState(() {
       colval = currentColVal;
     });
-    // FocusScopeNode currentFocus = FocusScope.of(context);
-
-    // if (!currentFocus.hasPrimaryFocus) {
-    //   currentFocus.unfocus();
-    // }
     FocusScope.of(context).unfocus();
   }
 }
