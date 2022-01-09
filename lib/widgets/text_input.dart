@@ -30,7 +30,7 @@ class ColorInput extends StatelessWidget {
             ),
           ),
           TextField(
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.text,
             style: const TextStyle(
               color: Colors.black,
             ),
