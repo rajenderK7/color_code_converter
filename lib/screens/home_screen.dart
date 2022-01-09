@@ -1,6 +1,5 @@
 import 'package:color_code_converter/components/main_body.dart';
 import 'package:color_code_converter/widgets/designed_by.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,7 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       extendBodyBehindAppBar: true,
       // appBar: AppBar(
       //   centerTitle: true,
@@ -27,8 +26,8 @@ class HomePage extends StatelessWidget {
       //   backgroundColor: Colors.transparent,
       //   elevation: 0.0,
       // ),
-      body: const MainBody(),
-      bottomNavigationBar: const DesignedBy(),
+      body: MainBody(),
+      bottomNavigationBar: DesignedBy(),
     );
   }
 }

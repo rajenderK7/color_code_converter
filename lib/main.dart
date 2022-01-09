@@ -1,11 +1,7 @@
 import 'package:color_code_converter/screens/home_screen.dart';
-import 'package:url_strategy/url_strategy.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  setPathUrlStrategy();
   runApp(const MyApp());
 }
 
