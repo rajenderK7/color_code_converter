@@ -25,6 +25,8 @@ class MobileView extends StatelessWidget {
           children: [
             // const SizedBox(height: 10),
             AppBar(
+              leading: const Image(
+                  image: AssetImage("assets/images/Color Code++.png")),
               centerTitle: true,
               title: Text(
                 "Color Code++",

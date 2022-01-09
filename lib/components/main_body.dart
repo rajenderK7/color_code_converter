@@ -38,6 +38,12 @@ class MainBody extends StatelessWidget {
                 //   ),
                 // ),
                 AppBar(
+                  // leading: IconButton(
+                  // onPressed: () {},
+                  // icon: const Image(
+                  //     image: AssetImage("assets/images/Color Code++.png"))),
+                  leading: const Image(
+                      image: AssetImage("assets/images/Color Code++.png")),
                   centerTitle: true,
                   title: Text(
                     "Color Code++",
