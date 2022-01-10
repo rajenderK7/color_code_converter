@@ -61,9 +61,7 @@ class MobileView extends StatelessWidget {
                     ),
                     child: Container(
                       width: _size.width * 0.8,
-                      height: (_size.width < 380 || _size.height < 750)
-                          ? _size.height * 0.8
-                          : _size.height * 0.8,
+                      height: _size.height * 0.8,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(

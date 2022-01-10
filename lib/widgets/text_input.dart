@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 class ColorInput extends StatelessWidget {
   final String labelText;
   final String hintText;
-  // final double hintFontSize;
   final bool canCopy;
   final TextEditingController controller;
   const ColorInput({
@@ -13,7 +12,6 @@ class ColorInput extends StatelessWidget {
     required this.labelText,
     required this.hintText,
     required this.controller,
-    // required this.hintFontSize,
     required this.canCopy,
   }) : super(key: key);
 
@@ -41,6 +39,7 @@ class ColorInput extends StatelessWidget {
               Expanded(
                 flex: 5,
                 child: TextField(
+                  enableInteractiveSelection: true,
                   style: const TextStyle(
                     color: Colors.black,
                   ),
