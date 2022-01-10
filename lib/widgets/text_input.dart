@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ColorInput extends StatelessWidget {
   final String labelText;
   final String hintText;
+  final double hintFontSize;
+  final bool canCopy;
   final TextEditingController controller;
-  const ColorInput(
-      {Key? key,
-      required this.labelText,
-      required this.hintText,
-      required this.controller})
-      : super(key: key);
+  const ColorInput({
+    Key? key,
+    required this.labelText,
+    required this.hintText,
+    required this.controller,
+    required this.hintFontSize,
+    required this.canCopy,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,20 +34,44 @@ class ColorInput extends StatelessWidget {
               ),
             ),
           ),
-          TextField(
-            keyboardType: TextInputType.text,
-            style: const TextStyle(
-              color: Colors.black,
-            ),
-            decoration: InputDecoration(
-              fillColor: Colors.white,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 5,
+                child: TextField(
+                  style: const TextStyle(
+                    color: Colors.black,
+                  ),
+                  decoration: InputDecoration(
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    hintText: hintText,
+                    hintStyle: TextStyle(
+                      fontSize: hintFontSize,
+                    ),
+                  ),
+                  controller: controller,
+                  maxLines: 1,
+                ),
               ),
-              hintText: hintText,
-            ),
-            controller: controller,
-            maxLines: 1,
+              IconButton(
+                onPressed: () {
+                  canCopy
+                      ? Clipboard.setData(
+                          ClipboardData(text: controller.value.text))
+                      : null;
+                },
+                icon: Icon(
+                  Icons.copy,
+                  size: 20,
+                  color: canCopy ? Colors.black : Colors.black45,
+                ),
+              ),
+            ],
           ),
         ],
       ),

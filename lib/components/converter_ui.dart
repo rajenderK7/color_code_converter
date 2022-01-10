@@ -18,6 +18,8 @@ class _ConverterUIState extends State<ConverterUI> {
 
   final _cmykController = TextEditingController();
 
+  bool canCopy = false;
+
   int colval = -1;
 
   @override
@@ -32,21 +34,51 @@ class _ConverterUIState extends State<ConverterUI> {
         child: Center(
           child: Column(
             children: [
-              ColorInput(
-                labelText: "RGB",
-                hintText: "eg: 255, 120, 175",
-                controller: _rgbController,
-              ),
-              ColorInput(
-                labelText: "HEX",
-                hintText: "eg: #FF78AF",
-                controller: _hexController,
-              ),
-              ColorInput(
-                labelText: "CMYK",
-                hintText: "eg: 0, 53, 31, 0",
-                controller: _cmykController,
-              ),
+              _size.width > 852
+                  ? ColorInput(
+                      labelText: "RGB",
+                      hintText: "eg: 255, 120, 175",
+                      controller: _rgbController,
+                      hintFontSize: 15,
+                      canCopy: canCopy,
+                    )
+                  : ColorInput(
+                      labelText: "RGB",
+                      hintText: "eg: 255, 120, 175",
+                      controller: _rgbController,
+                      hintFontSize: 12,
+                      canCopy: canCopy,
+                    ),
+              _size.width > 852
+                  ? ColorInput(
+                      labelText: "HEX",
+                      hintText: "eg: #FF78AF",
+                      controller: _hexController,
+                      hintFontSize: 15,
+                      canCopy: canCopy,
+                    )
+                  : ColorInput(
+                      labelText: "HEX",
+                      hintText: "eg: #FF78AF",
+                      controller: _hexController,
+                      hintFontSize: 12,
+                      canCopy: canCopy,
+                    ),
+              _size.width > 852
+                  ? ColorInput(
+                      labelText: "CMYK",
+                      hintText: "eg: 0, 53, 31, 0",
+                      controller: _cmykController,
+                      hintFontSize: 15,
+                      canCopy: canCopy,
+                    )
+                  : ColorInput(
+                      labelText: "CMYK",
+                      hintText: "eg: 0, 53, 31, 0",
+                      controller: _cmykController,
+                      hintFontSize: 12,
+                      canCopy: canCopy,
+                    ),
               const SizedBox(
                 height: 20,
               ),
@@ -230,6 +262,7 @@ class _ConverterUIState extends State<ConverterUI> {
     if (currentColor == "") {
       setState(() {
         colval = -1;
+        canCopy = !canCopy;
       });
       return;
     }
@@ -237,6 +270,7 @@ class _ConverterUIState extends State<ConverterUI> {
     int currentColVal = int.parse(currentColor, radix: 16);
     setState(() {
       colval = currentColVal;
+      canCopy = !canCopy;
     });
     FocusScope.of(context).unfocus();
   }
