@@ -41,15 +41,6 @@ class MobileView extends StatelessWidget {
               backgroundColor: Colors.white,
               elevation: 0.0,
             ),
-            // Text(
-            //   "Color Code++",
-            //   style: GoogleFonts.josefinSans(
-            //     fontWeight: FontWeight.bold,
-            //     color: Colors.white,
-            //     fontSize: 30,
-            //     letterSpacing: 1.5,
-            //   ),
-            // ),
             const SizedBox(height: 10),
             Center(
               child: Container(
@@ -71,7 +62,7 @@ class MobileView extends StatelessWidget {
                     child: Container(
                       width: _size.width * 0.8,
                       height: (_size.width < 380 || _size.height < 750)
-                          ? _size.height * 0.82
+                          ? _size.height * 0.8
                           : _size.height * 0.8,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
@@ -88,10 +79,14 @@ class MobileView extends StatelessWidget {
                         ),
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: const [
-                          ColorQuoteMobile(),
-                          ConverterUI(),
+                          Center(child: ColorQuoteMobile()),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 5.0),
+                            child: ConverterUI(),
+                          ),
                         ],
                       ),
                       // child: const ConverterUI(),
