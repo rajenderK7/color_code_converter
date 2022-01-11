@@ -23,6 +23,14 @@ class _ConverterUIState extends State<ConverterUI> {
   int colval = -1;
 
   @override
+  void dispose() {
+    super.dispose();
+    _rgbController.dispose();
+    _hexController.dispose();
+    _cmykController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
     return Container(
